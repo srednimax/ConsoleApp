@@ -24,7 +24,7 @@
                 importedLines.Add(line);
             }
 
-            for (int i = 0; i <= importedLines.Count; i++)
+            for (int i = 0; i < importedLines.Count; i++)
             {
                 var importedLine = importedLines[i];
                 if (String.IsNullOrEmpty(importedLine))
@@ -34,7 +34,7 @@
 
                 if (values.Length != 7)
                     continue;
-
+                Console.WriteLine(i);
                 var importedObject = new ImportedObject();
                 importedObject.Type = values[0];
                 importedObject.Name = values[1];
