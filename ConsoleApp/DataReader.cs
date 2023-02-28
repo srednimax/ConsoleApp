@@ -65,13 +65,13 @@
                 var importedObject = ImportedObjects.ToArray()[i];
                 foreach (var impObj in ImportedObjects)
                 {
-                    if (impObj.ParentType == importedObject.Type)
-                    {
-                        if (impObj.ParentName == importedObject.Name)
-                        {
-                            importedObject.NumberOfChildren = 1 + importedObject.NumberOfChildren;
-                        }
-                    }
+                    if (impObj.ParentType != importedObject.Type)
+                        continue;
+
+                    if (impObj.ParentName != importedObject.Name)
+                        continue;
+
+                    importedObject.NumberOfChildren = 1 + importedObject.NumberOfChildren;
                 }
             }
 
