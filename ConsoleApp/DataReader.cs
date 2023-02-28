@@ -71,7 +71,7 @@
                     if (impObj.ParentName != importedObject.Name)
                         continue;
 
-                    importedObject.NumberOfChildren = 1 + importedObject.NumberOfChildren;
+                    importedObject.NumberOfChildren += 1;
                 }
             }
 
