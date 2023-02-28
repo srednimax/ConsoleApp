@@ -11,7 +11,7 @@
     {
         IEnumerable<ImportedObject> ImportedObjects = new List<ImportedObject>();
 
-        public void ImportAndPrintData(string fileToImport, bool printData = true)
+        public void ImportAndPrintData(string fileToImport)
         {
 
             var streamReader = new StreamReader(fileToImport);
@@ -33,6 +33,7 @@
 
                 if (values.Length != 7)
                     continue;
+
                 var importedObject = new ImportedObject();
                 importedObject.Type = values[0];
                 importedObject.Name = values[1];
