@@ -27,7 +27,14 @@
             for (int i = 0; i <= importedLines.Count; i++)
             {
                 var importedLine = importedLines[i];
+                if (String.IsNullOrEmpty(importedLine))
+                    continue;
+
                 var values = importedLine.Split(';');
+
+                if (values.Length != 7)
+                    continue;
+
                 var importedObject = new ImportedObject();
                 importedObject.Type = values[0];
                 importedObject.Name = values[1];
@@ -103,18 +110,11 @@
 
     class ImportedObject : ImportedObjectBaseClass
     {
-        public string Name
-        {
-            get;
-            set;
-        }
+        public string Name { get; set; }
         public string Schema;
 
         public string ParentName;
-        public string ParentType
-        {
-            get; set;
-        }
+        public string ParentType { get; set; }
 
         public string DataType { get; set; }
         public string IsNullable { get; set; }
