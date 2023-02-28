@@ -45,6 +45,10 @@
                 ((List<ImportedObject>)ImportedObjects).Add(importedObject);
             }
 
+            //close streamReader
+            streamReader.Close();
+
+
             // clear and correct imported data
             foreach (var importedObject in ImportedObjects)
             {
